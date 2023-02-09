@@ -1,13 +1,4 @@
 /**
- * No hay una única forma de organizar las rutas de un sitio web.
- * Una alternativa podría ser organizar las rutas por entidad:
- */
-
-const userRoutes = require("./userRoutes");
-const articleRoutes = require("./articleRoutes");
-const commentRoutes = require("./commentRoutes");
-
-/**
  * Otra alternativa podría ser organizar las rutas según su nivel de
  * privacidad (ej: si son rutas públicas o privadas).
  *
