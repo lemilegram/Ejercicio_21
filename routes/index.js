@@ -19,5 +19,5 @@ module.exports = (app) => {
    * en inglés.
    */
   app.use("/", publicRoutes);
-  app.use("/", privateRoutes);
+  app.use("/panel", privateRoutes);
 };

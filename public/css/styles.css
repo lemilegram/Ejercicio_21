@@ -1,1 +1,16 @@
 /* Colocar aquí CSS "propio" */
+.hero {
+  background-image: url("../img/milanesa.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+}
+
+.hero > * {
+  color: white;
+}
+
+.articlePreview {
+  border-bottom: 1px solid lightgray;
+}
