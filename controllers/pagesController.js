@@ -24,7 +24,7 @@ async function showHome(req, res) {
 }
 
 async function showAdmin(req, res) {
-  res.render("admin");
+  res.render("../views/admin");
 }
 
 async function showAboutUs(req, res) {
