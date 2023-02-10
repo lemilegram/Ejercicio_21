@@ -40,13 +40,26 @@
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
-                <th scope="col">Image</th>
                 <th scope="col">Created at</th>
                 <th scope="col">Author</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              <% for (const article of articles){ %>
+              <tr>
+                <th scope="row"><%= article.id %></th>
+                <td><%= article.title %></td>
+                <td><%= article.content %></td>
+                <td><%= article.createdAt %></td>
+                <td></td>
+                <td>
+                  <a class="btn btn-warning" href="#" role="button">Editar</a>
+                  <a class="btn btn-danger" href="#" role="button">Eliminar</a>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
           </table>
         </div>
         <script

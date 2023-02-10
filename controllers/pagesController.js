@@ -24,7 +24,8 @@ async function showHome(req, res) {
 }
 
 async function showAdmin(req, res) {
-  res.render("../views/admin");
+  const articles = await Article.findAll();
+  res.render("../views/admin", { articles });
 }
 
 async function showAboutUs(req, res) {
