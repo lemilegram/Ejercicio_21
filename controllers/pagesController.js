@@ -28,6 +28,11 @@ async function showAdmin(req, res) {
   res.render("../views/admin", { articles });
 }
 
+async function showNewArticle(req, res) {
+  const articles = await Article.findAll();
+  res.render("../views/newArticle", { articles });
+}
+
 async function showAboutUs(req, res) {
   res.render("aboutUs");
 }
@@ -38,5 +43,6 @@ async function showAboutUs(req, res) {
 module.exports = {
   showHome,
   showAdmin,
+  showNewArticle,
   showAboutUs,
 };

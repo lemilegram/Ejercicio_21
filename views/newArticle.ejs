@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Articulo</title>
+    <%- include ('partials/bootstrap') %>
+  </head>
+  <body class="vh-100">
+    <%- include ("partials/navbar") %>
+    <div class="my-4 d-flex flex-column justify-content-center align-items-center">
+      <div
+        class="container w-50 d-flex flex-column align-items-center justify-content-center p-3 border border-secondary-subtle"
+      >
+        <h1 class="text-center">Ingresar nuevo articulo</h1>
+        <form id="form" class="mt-4 w-100" action="/multiply" method="GET">
+          <div class="mb-3">
+            <label for="title" class="form-label">Titulo</label>
+            <input name="title" type="text" class="form-control" id="title" />
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">Contenido</label>
+            <textarea
+              id="content"
+              name="content"
+              rows="4"
+              cols="50"
+              class="form-control"
+            ></textarea>
+          </div>
+          <div>
+            <label for="author" class="form-label">Autor</label>
+            <input name="author" type="text" class="form-control" id="author" />
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary btn-success" type="submit">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

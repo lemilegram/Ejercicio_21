@@ -4,4 +4,6 @@ const pagesController = require("../controllers/pagesController");
 
 router.get("/admin", pagesController.showAdmin);
 
+router.get("/admin/new", pagesController.showNewArticle);
+
 module.exports = router;
