@@ -17,6 +17,7 @@
  */
 
 const { Article } = require("../models");
+const { User } = require("../models");
 
 async function showHome(req, res) {
   const articles = await Article.findAll();

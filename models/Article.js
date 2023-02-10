@@ -15,6 +15,9 @@ class Article extends Model {
         content: {
           type: DataTypes.TEXT,
         },
+        authorId: {
+          type: DataTypes.TINYINT,
+        },
       },
       {
         sequelize,
