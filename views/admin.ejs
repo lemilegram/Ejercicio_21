@@ -36,11 +36,7 @@
             <td><%= article.createdAt %></td>
             <td>
               <!-- prettier-ignore -->
-              <% console.log(User); %>
-              <!-- prettier-ignore -->
-              <% const author = await User.findOne({where:{userId:article.userId}}) %>
-              <!-- prettier-ignore -->
-              <%=`${author.firstname} ${author.lastname}` %>
+              <%= `${article.user.dataValues.firstname} ${article.user.dataValues.lastname}` %>
             </td>
 
             <td class="align-middle">

@@ -20,14 +20,13 @@ const { Article } = require("../models");
 const { User } = require("../models");
 
 async function showHome(req, res) {
-  const articles = await Article.findAll();
+  const articles = await Article.findAll({ include: User });
   res.render("../views/home", { articles });
 }
 
 async function showAdmin(req, res) {
-  const articles = await Article.findAll();
-  const users = await User.findAll();
-  res.render("../views/admin", { articles, users });
+  const articles = await Article.findAll({ include: User });
+  res.render("../views/admin", { articles });
 }
 
 async function showNewArticle(req, res) {

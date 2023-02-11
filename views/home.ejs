@@ -18,7 +18,10 @@
       <% for (const article of articles){ %>
       <div class="articlePreview d-flex flex-column">
         <h2><%= article.title %></h2>
-        <small>Creado por <%= article.user %> el <%= article.createdAt %></small>
+        <small
+          >Creado por <%= `${article.user.firstname} ${article.user.lastname}`%> el <%=
+          article.createdAt %></small
+        >
       </div>
       <% } %>
     </div>
