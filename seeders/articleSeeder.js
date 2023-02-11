@@ -25,7 +25,8 @@ module.exports = async () => {
     });
   }
 
-  await Article.bulkCreate(articles);
   await User.bulkCreate(users);
+  await Article.bulkCreate(articles);
+
   console.log("[Database] Se corrió el seeder de Articles.");
 };
