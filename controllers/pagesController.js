@@ -27,7 +27,6 @@ async function showHome(req, res) {
 async function showAdmin(req, res) {
   const articles = await Article.findAll();
   const users = await User.findAll();
-  return res.json(articles);
   res.render("../views/admin", { articles, users });
 }
 

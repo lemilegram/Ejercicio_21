@@ -1,12 +1,14 @@
 const { faker } = require("@faker-js/faker");
 const { Article } = require("../models");
 const { User } = require("../models");
+const { Comment } = require("../models");
 
 faker.locale = "es";
 
 module.exports = async () => {
   const articles = [];
   const users = [];
+  const comments = [];
 
   for (let i = 0; i < 10; i++) {
     let firstname = faker.name.firstName();
@@ -25,8 +27,17 @@ module.exports = async () => {
     });
   }
 
+  for (let i = 0; i < 20; i++) {
+    comments.push({
+      content: faker.lorem.paragraphs(),
+      userId: Math.floor(Math.random() * 9) + 1,
+      articleId: Math.floor(Math.random() * 9) + 1,
+    });
+  }
+
   await User.bulkCreate(users);
   await Article.bulkCreate(articles);
+  await Comment.bulkCreate(comments);
 
   console.log("[Database] Se corrió el seeder de Articles.");
 };
