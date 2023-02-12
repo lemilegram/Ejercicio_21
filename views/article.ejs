@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include("partials/bootstrap") %>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title><%= showArticle.dataValues.title %></title>
   </head>
 
   <body>
-    <div>
+    <%- include("partials/navbar") %>
+    <section class="hero d-flex flex-column justify-content-center align-items-center">
       <h2><%= showArticle.dataValues.title %></h2>
       <span
         >Creado por <%= showArticle.user.dataValues.firstname %> <%=
         showArticle.user.dataValues.lastname %> el <%= showArticle.dataValues.createdAt %></span
       >
-    </div>
+    </section>
+
     <div>
       <p><%= showArticle.dataValues.content %></p>
       <hr />
@@ -24,7 +27,7 @@
       <form>
         <h3>Add your comment</h3>
         <input type="text" placeholder="Name" />
-        <input type="textarea" placeholder="Comment here..." />
+        <textarea name="" id="" cols="30" rows="10"></textarea>
         <button>Send</button>
       </form>
       <h3>Comments (número de comentarios)</h3>
@@ -33,5 +36,6 @@
         <h5>Acá el autor del comentario</h5>
       </div>
     </div>
+    <%- include("partials/footer") %>
   </body>
 </html>
