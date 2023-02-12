@@ -9,8 +9,15 @@
 
 .hero > * {
   color: white;
+  font-weight: bold;
 }
 
 .articlePreview {
   border-bottom: 1px solid lightgray;
+  margin-inline: 200px;
+  margin-block: 20px;
+}
+
+.textoPrincipal {
+  font-weight: bold;
 }
