@@ -9,4 +9,6 @@ router.get("/admin/new", pagesController.showNewArticle);
 
 router.post("/admin/new", articleController.create);
 
+router.get("/article/:articleId", articleController.show);
+
 module.exports = router;

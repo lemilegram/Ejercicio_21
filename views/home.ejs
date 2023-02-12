@@ -14,10 +14,12 @@
       <h1>Hack the blog</h1>
       <h3>El Blog de Hack Academy</h3>
     </section>
+
     <div class="container">
       <% for (const article of articles){ %>
       <div class="articlePreview d-flex flex-column">
         <h2 class="textoPrincipal"><%= article.title %></h2>
+        <a href=<%- `panel/article/${article.id}` %>><h2><%= article.title %></h2></a>
         <small
           >Creado por <%= `${article.user.firstname} ${article.user.lastname}`%> el <%=
           article.createdAt %></small
