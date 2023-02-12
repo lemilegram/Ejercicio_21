@@ -7,8 +7,8 @@ async function index(req, res) {}
 // Display the specified resource.
 async function show(req, res) {
   const articles = await Article.findAll({ include: User });
-  console.log(`Id del artículo es: ${req.params.articleId}`);
-  res.render("../views/article", { articles });
+  const showArticle = articles[req.params.articleId - 1];
+  res.render("../views/article", { showArticle });
 }
 
 // Show the form for creating a new resource
