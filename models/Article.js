@@ -15,6 +15,10 @@ class Article extends Model {
         content: {
           type: DataTypes.TEXT,
         },
+        image: {
+          type: DataTypes.STRING,
+          defaultValue: "http://loremflickr.com/640/480/abstract?88074",
+        },
       },
       {
         sequelize,
