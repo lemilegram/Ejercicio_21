@@ -35,7 +35,7 @@ async function showNewArticle(req, res) {
 }
 
 async function showEditArticle(req, res) {
-  const article = await Article.findByPk(req.params.articleId);
+  const article = await Article.findByPk(req.params.articleId, { include: User });
   res.render("../views/editArticle", { article });
 }
 

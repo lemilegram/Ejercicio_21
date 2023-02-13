@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuevo Articulo</title>
+    <title>Editar Articulo</title>
     <%- include ('partials/bootstrap') %>
   </head>
   <body class="vh-100">
@@ -22,13 +22,13 @@
               type="text"
               class="form-control"
               id="title"
-              value="Ingresar título"
+              value="<%- article.title %>"
             />
           </div>
           <div class="mb-3">
             <label for="content" class="form-label">Contenido</label>
             <textarea id="content" name="content" rows="4" cols="50" class="form-control">
-asd</textarea
+<%- article.content %></textarea
             >
           </div>
           <div class="mb-3">
@@ -38,7 +38,7 @@ asd</textarea
               type="text"
               class="form-control"
               id="author"
-              value="Nombre y Apellido"
+              value="<%- article.user.firstname %> <%- article.user.lastname %>"
             />
           </div>
           <div class="mb-3">
@@ -48,7 +48,7 @@ asd</textarea
               type="text"
               class="form-control"
               id="Email"
-              value="nombre@example.com"
+              value="<%- article.user.email %>"
             />
           </div>
           <div class="col-12 mt-3">
