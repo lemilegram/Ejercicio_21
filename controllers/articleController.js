@@ -30,8 +30,12 @@ async function store(req, res) {}
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {
+  const user = await User.findOrCreate({
+    where: { email: req.body.email },
+    defaults: { firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email },
+  });
   await Article.update(
-    { title: req.body.title, content: req.body.content },
+    { title: req.body.title, content: req.body.content, userId: user[0].dataValues.id },
     { where: { id: req.params.articleId } },
   );
   res.redirect("/panel/admin");
