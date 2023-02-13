@@ -14,8 +14,9 @@
     <section class="hero d-flex flex-column justify-content-center align-items-center">
       <h2><%= showArticle.dataValues.title %></h2>
       <span
-        >Creado por <%= showArticle.user.dataValues.firstname %> <%=
-        showArticle.user.dataValues.lastname %> el <%= showArticle.dataValues.createdAt %></span
+        >Creado por <%= showArticle.user.dataValues.firstname %>
+        <!-- prettier-ignore -->
+        <%=showArticle.user.dataValues.lastname %> el <%= showArticle.dataValues.createdAt %></span
       >
     </section>
 

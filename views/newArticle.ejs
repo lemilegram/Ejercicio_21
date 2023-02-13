@@ -23,6 +23,7 @@
               class="form-control"
               id="title"
               placeholder="Ingresar título"
+              required
             />
           </div>
           <div class="mb-3">
@@ -34,26 +35,39 @@
               cols="50"
               class="form-control"
               placeholder="Ingresar contenido"
+              required
             ></textarea>
           </div>
           <div class="mb-3">
-            <label for="author" class="form-label">Autor</label>
+            <label for="firstname" class="form-label">Nombre del Autor</label>
             <input
-              name="author"
+              name="firstname"
               type="text"
               class="form-control"
-              id="author"
-              placeholder="Nombre y Apellido"
+              id="firstname"
+              placeholder="Juan"
+              required
             />
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Apellido del Autor</label>
+              <input
+                name="lastname"
+                type="text"
+                class="form-control"
+                id="lastname"
+                placeholder="Pérez"
+                required
+              />
           </div>
           <div class="mb-3">
-            <label for="author" class="form-label">Email</label>
+            <label for="email" class="form-label">Email</label>
             <input
-              name="author"
-              type="text"
+              name="email"
+              type="email"
               class="form-control"
-              id="Email"
+              id="email"
               placeholder="nombre@example.com"
+              required
             />
           </div>
           <div class="col-12 mt-3">
