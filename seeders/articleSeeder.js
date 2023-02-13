@@ -13,9 +13,11 @@ module.exports = async () => {
   for (let i = 0; i < 10; i++) {
     let firstname = faker.name.firstName();
     let lastname = faker.name.lastName();
+    let email = faker.internet.exampleEmail(firstname, lastname);
     users.push({
       firstname,
       lastname,
+      email,
     });
   }
 
