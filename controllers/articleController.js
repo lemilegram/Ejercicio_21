@@ -20,7 +20,10 @@ async function create(req, res) {
 async function store(req, res) {}
 
 // Show the form for editing the specified resource.
-async function edit(req, res) {}
+async function edit(req, res) {
+  await Article.update({ title: req.body.title }, { where: req.params.articleId });
+  console.log("aaaa");
+}
 
 // Update the specified resource in storage.
 async function update(req, res) {}
