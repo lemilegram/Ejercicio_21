@@ -23,42 +23,46 @@
               class="form-control"
               id="title"
               value="<%- article.title %>"
+              required
             />
           </div>
           <div class="mb-3">
             <label for="content" class="form-label">Contenido</label>
-            <textarea id="content" name="content" rows="4" cols="50" class="form-control">
+            <textarea id="content" name="content" rows="4" cols="50" class="form-control" required>
 <%- article.content %></textarea
             >
           </div>
           <div class="mb-3">
-            <label for="userFirstname" class="form-label">Nombre del Autor</label>
+            <label for="firstname" class="form-label">Nombre del Autor</label>
             <input
-              name="userFirstname"
+              name="firstname"
               type="text"
               class="form-control"
-              id="userFirstname"
+              id="firstname"
               value="<%- article.user.firstname %>"
+              required
             />
           </div>
           <div class="mb-3">
-            <label for="userLastname" class="form-label">Apellido del Autor</label>
+            <label for="lastname" class="form-label">Apellido del Autor</label>
             <input
-              name="userLastname"
+              name="lastname"
               type="text"
               class="form-control"
-              id="userLastname"
+              id="lastname"
               value="<%- article.user.lastname %>"
+              required
             />
           </div>
           <div class="mb-3">
-            <label for="author" class="form-label">Email</label>
+            <label for="email" class="form-label">Email</label>
             <input
-              name="author"
+              name="email"
               type="text"
               class="form-control"
-              id="Email"
+              id="email"
               value="<%- article.user.email %>"
+              required
             />
           </div>
           <div class="col-12 mt-3">
