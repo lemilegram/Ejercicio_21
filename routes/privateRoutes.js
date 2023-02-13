@@ -13,6 +13,6 @@ router.get("/edit/:articleId", pagesController.showEditArticle);
 
 router.post("/edit/:articleId", articleController.edit);
 
-router.delete("/edit/:articleId", articleController.delete);
+router.get("/delete/:articleId", articleController.destroy);
 
 module.exports = router;

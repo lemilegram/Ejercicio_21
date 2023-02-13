@@ -36,6 +36,7 @@ async function destroy(req, res) {
   await Article.destroy({
     where: { id: req.params.articleId },
   });
+  res.redirect("/panel/admin");
 }
 
 // Otros handlers...
