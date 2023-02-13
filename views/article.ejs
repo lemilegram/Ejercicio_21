@@ -5,34 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include("partials/bootstrap") %>
-    <link rel="stylesheet" href="css/styles.css" />
-    <title><%= showArticle.dataValues.title %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title><%= article.title %></title>
   </head>
 
   <body>
     <%- include("partials/navbar") %>
     <section class="hero d-flex flex-column justify-content-center align-items-center">
-      <h2><%= showArticle.dataValues.title %></h2>
+      <h2><%= article.title %></h2>
       <span
-        >Creado por <%= showArticle.user.dataValues.firstname %>
+        >Creado por <%= article.user.firstname %>
         <!-- prettier-ignore -->
-        <%=showArticle.user.dataValues.lastname %> el <%= showArticle.dataValues.createdAt %></span
+        <%=article.user.lastname %> el <%= article.createdAt %></span
       >
     </section>
 
     <div>
-      <p><%= showArticle.dataValues.content %></p>
+      <p><%= article.content %></p>
       <hr />
     </div>
     <div class="d-flex flex-column">
-      <form>
+      <form action="/article/<%= article.id %>" method="post">
         <h3>Add your comment</h3>
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Name" />
+          <input type="text" class="form-control" placeholder="Name" name="name" />
         </div>
 
         <div class="form-floating">
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" name="comment"></textarea>
         </div>
 
         <div class="col-auto">
