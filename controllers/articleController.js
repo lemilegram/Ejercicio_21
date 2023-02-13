@@ -21,15 +21,22 @@ async function store(req, res) {}
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {
-  await Article.update({ title: req.body.title }, { where: req.params.articleId });
-  console.log("aaaa");
+  await Article.update(
+    { title: req.body.title, content: req.body.content },
+    { where: { id: req.params.articleId } },
+  );
+  res.redirect("/panel/admin");
 }
 
 // Update the specified resource in storage.
 async function update(req, res) {}
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function destroy(req, res) {
+  await Article.destroy({
+    where: { id: req.params.articleId },
+  });
+}
 
 // Otros handlers...
 // ...
