@@ -14,7 +14,7 @@
         class="container w-50 d-flex flex-column align-items-center justify-content-center p-3 border border-dark"
       >
         <h1 class="text-center">Editar artículo</h1>
-        <form id="form" class="mt-4 w-100" action="/panel/admin/new" method="POST">
+        <form id="form" class="mt-4 w-100" action="/panel/edit/<%- article.id %>" method="PUT">
           <div class="mb-3">
             <label for="title" class="form-label">Título</label>
             <input
@@ -32,13 +32,23 @@
             >
           </div>
           <div class="mb-3">
-            <label for="author" class="form-label">Autor</label>
+            <label for="userFirstname" class="form-label">Nombre del Autor</label>
             <input
-              name="author"
+              name="userFirstname"
               type="text"
               class="form-control"
-              id="author"
-              value="<%- article.user.firstname %> <%- article.user.lastname %>"
+              id="userFirstname"
+              value="<%- article.user.firstname %>"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="userLastname" class="form-label">Apellido del Autor</label>
+            <input
+              name="userLastname"
+              type="text"
+              class="form-control"
+              id="userLastname"
+              value="<%- article.user.lastname %>"
             />
           </div>
           <div class="mb-3">
