@@ -18,7 +18,7 @@
     <div class="container">
       <% for (const article of articles){ %>
       <div class="articlePreview d-flex flex-column">
-        <a href=<%- `panel/article/${article.id}` %> class="text-decoration-none text-reset"><h2 class="textoPrincipal"><%= article.title %></h2></a>
+        <a href=<%-`article/${article.id}` %> class="text-decoration-none text-reset"><h2 class="textoPrincipal"><%= article.title %></h2></a>
         <small
           >Creado por <%= `${article.user.firstname} ${article.user.lastname}`%> el <%=
           article.createdAt %></small
