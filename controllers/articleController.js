@@ -13,7 +13,16 @@ async function show(req, res) {
 
 // Show the form for creating a new resource
 async function create(req, res) {
-  console.log(req.body);
+  const user = await User.findOrCreate({
+    where: { email: req.body.email },
+    defaults: { firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email },
+  });
+  await Article.create({
+    title: req.body.title,
+    content: req.body.content,
+    userId: user[0].dataValues.id,
+  });
+  res.redirect("/panel/admin");
 }
 
 // Store a newly created resource in storage.
