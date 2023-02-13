@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Articulo</title>
+    <%- include ('partials/bootstrap') %>
+  </head>
+  <body class="vh-100">
+    <%- include ("partials/navbar") %>
+    <div class="my-4 d-flex flex-column justify-content-center align-items-center">
+      <div
+        class="container w-50 d-flex flex-column align-items-center justify-content-center p-3 border border-dark"
+      >
+        <h1 class="text-center">Editar artículo</h1>
+        <form id="form" class="mt-4 w-100" action="/panel/admin/new" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input
+              name="title"
+              type="text"
+              class="form-control"
+              id="title"
+              value="Ingresar título"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">Contenido</label>
+            <textarea id="content" name="content" rows="4" cols="50" class="form-control">
+asd</textarea
+            >
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Autor</label>
+            <input
+              name="author"
+              type="text"
+              class="form-control"
+              id="author"
+              value="Nombre y Apellido"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Email</label>
+            <input
+              name="author"
+              type="text"
+              class="form-control"
+              id="Email"
+              value="nombre@example.com"
+            />
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary" type="submit">Editar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

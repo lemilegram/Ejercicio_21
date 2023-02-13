@@ -9,4 +9,8 @@ router.get("/admin/new", pagesController.showNewArticle);
 
 router.post("/admin/new", articleController.create);
 
+router.get("/edit/:articleId", pagesController.showEditArticle);
+
+router.post("/edit/:articleId", articleController.edit);
+
 module.exports = router;
