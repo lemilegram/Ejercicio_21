@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include("partials/bootstrap") %>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title><%= showArticle.dataValues.title %></title>
   </head>
 
@@ -23,7 +23,8 @@
       <p><%= showArticle.dataValues.content %></p>
       <hr />
     </div>
-    <div class="d-flex flex-column">
+
+    <div class="d-flex flex-column mx-auto" style="width: 600px">
       <form>
         <h3>Add your comment</h3>
         <div class="mb-3">
@@ -34,8 +35,8 @@
           <textarea class="form-control"></textarea>
         </div>
 
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3 mt-3">Send</button>
+        <div class="d-grid gap-2 col-auto">
+          <button class="btn btn-primary mb-3 mt-3" type="submit">Send</button>
         </div>
       </form>
       <h3>Comments (número de comentarios)</h3>
@@ -44,6 +45,7 @@
         <h5>Acá el autor del comentario</h5>
       </div>
     </div>
+
     <%- include("partials/footer") %>
   </body>
 </html>
