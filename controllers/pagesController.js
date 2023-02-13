@@ -34,6 +34,11 @@ async function showNewArticle(req, res) {
   res.render("../views/newArticle", { articles });
 }
 
+async function showEditArticle(req, res) {
+  const article = await Article.findByPk(req.params.articleId);
+  res.render("../views/editArticle", { article });
+}
+
 async function showAboutUs(req, res) {
   res.render("aboutUs");
 }
@@ -45,5 +50,6 @@ module.exports = {
   showHome,
   showAdmin,
   showNewArticle,
+  showEditArticle,
   showAboutUs,
 };
