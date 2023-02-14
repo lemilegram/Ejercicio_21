@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Articulo</title>
+    <%- include ('partials/bootstrap') %>
+  </head>
+  <body class="vh-100">
+    <div class="my-5 d-flex flex-column justify-content-center align-items-center ">
+      <div
+        class="container w-50 d-flex flex-column align-items-center justify-content-center p-3 border border-dark"
+      >
+        <h1 class="text-center">Create new user</h1>
+        <form id="form" class="mt-4 w-100" action="/register" method="POST">
+          <div class="mb-3">
+            <label for="firstname" class="form-label">Name</label>
+            <input
+              name="firstname"
+              type="text"
+              class="form-control"
+              id="firstname"
+              placeholder="Insert nombre..."
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label">Last name</label>
+            <textarea
+              id="lastname"
+              name="lastname"
+              rows="4"
+              cols="50"
+              class="form-control"
+              placeholder="Insert apellido..."
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="nombre@example.com"
+              required
+            />
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                name="password"
+                type="text"
+                class="form-control"
+                id="password"
+                placeholder="Insert password..."
+                required
+              />
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary btn-success" type="submit">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p>Are you already registered?<a href="/login" class="ms-2">Log in</a></p>
+    </div>
+    <%- include ("partials/footer") %>
+  </body>
+</html>
