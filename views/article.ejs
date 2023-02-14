@@ -41,12 +41,16 @@
         </div>
       </form>
       <h3>Comments</h3>
-      <% for (const article of articles){ %>
+      <% console.log(article) %> <% for (const comment of comments) { %>
       <div>
-        <p>Acá iría el comentario de alguien</p>
-        <h5>Acá el autor del comentario</h5>
+        <p><%= comment.content %></p>
+        <% const authorId = comment.userId %>
+        <small
+          >Creado por <%= users[authorId - 1].firstname %> <%= users[authorId - 1].lastname
+          %></small
+        >
       </div>
-      <% } %>
+      <%}%>
     </div>
 
     <%- include("partials/footer") %>

@@ -32,7 +32,7 @@ module.exports = async () => {
 
   for (let i = 0; i < 20; i++) {
     comments.push({
-      content: faker.lorem.paragraphs(),
+      content: faker.lorem.paragraphs(1),
       userId: Math.floor(Math.random() * 9) + 1,
       articleId: Math.floor(Math.random() * 9) + 1,
     });

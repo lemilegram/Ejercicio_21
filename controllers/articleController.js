@@ -1,5 +1,6 @@
 const { Article } = require("../models");
 const { User } = require("../models");
+const { Comment } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {}
@@ -8,7 +9,12 @@ async function index(req, res) {}
 async function show(req, res) {
   // const articles = await Article.findAll({ include: User });
   const article = await Article.findByPk(req.params.articleId, { include: User });
-  res.render("article", { article });
+  const comments = await Comment.findAll(
+    { where: { articleId: req.params.articleId } },
+    { include: User },
+  );
+  const users = await User.findAll();
+  res.render("article", { article, comments, users });
 }
 
 // Show the form for creating a new resource
