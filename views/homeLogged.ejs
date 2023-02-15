@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include("partials/bootstrap") %>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <%- include("partials/loggedNav") %>
+    <section class="hero d-flex flex-column justify-content-center align-items-center">
+      <h1>Hack the blog</h1>
+      <h3>El Blog de Hack Academy</h3>
+    </section>
+
+    <div class="container">
+      <% for (const article of articles){ %>
+      <div class="articlePreview d-flex flex-column">
+        <a href=<%-`article/${article.id}` %> class="text-decoration-none text-reset"><h2 class="textoPrincipal"><%= article.title %></h2></a>
+        <small class="createHome"
+          >Creado por <%= `${article.user.firstname} ${article.user.lastname}`%> el <%=
+          article.createdAt %></small
+        >
+      </div>
+      <% } %>
+    </div>
+    <%- include("partials/footer") %>
+  </body>
+</html>

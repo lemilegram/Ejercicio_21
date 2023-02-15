@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const pagesController = require("../controllers/pagesController");
 const articleController = require("../controllers/articleController");
+const commentController = require("../controllers/commentController");
+const authController = require("../controllers/authController");
+
+router.get("/homeLogged", pagesController.showHomeLogged);
 
 router.get("/admin", pagesController.showAdmin);
 
