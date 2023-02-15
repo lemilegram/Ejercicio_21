@@ -24,20 +24,32 @@ async function create(req, res) {}
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const registerFirstname = req.body.firstname;
-  const registerLastname = req.body.lastname;
-  const registerEmail = req.body.email;
-  const registerPassword = req.body.password;
-
-  await User.create({
-    firstname: registerFirstname,
-    lastname: registerLastname,
-    email: registerEmail,
-    password: await bcrypt.hash(`${registerPassword}`, 8),
+  const [user, created] = await User.findOrCreate({
+    where: {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: req.body.password,
+    },
   });
-
-  return res.redirect("/home");
+  if (created) {
+    req.login(user, () => res.redirect("/admin"));
+  } else {
+    res.redirect("back");
+  }
 }
+
+// const registerFirstname = req.body.firstname;
+// const registerLastname = req.body.lastname;
+// const registerEmail = req.body.email;
+// const registerPassword = req.body.password;
+
+// await User.create({
+//   firstname: registerFirstname,
+//   lastname: registerLastname,
+//   email: registerEmail,
+//   password: await bcrypt.hash(`${registerPassword}`, 8),
+// });
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {}

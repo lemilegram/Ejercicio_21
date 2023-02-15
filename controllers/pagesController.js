@@ -31,7 +31,7 @@ async function showHomeLogged(req, res) {
 
 async function showAdmin(req, res) {
   const articles = await Article.findAll({ include: User });
-  res.render("../views/admin", { articles });
+  res.render(admin, { articles });
 }
 
 async function showNewArticle(req, res) {

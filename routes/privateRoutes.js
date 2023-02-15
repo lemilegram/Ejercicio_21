@@ -2,21 +2,20 @@ const express = require("express");
 const router = express.Router();
 const pagesController = require("../controllers/pagesController");
 const articleController = require("../controllers/articleController");
-const commentController = require("../controllers/commentController");
-const authController = require("../controllers/authController");
+const isAuthenticated = require("../middlewares/isAuthenticated");
 
 router.get("/homeLogged", pagesController.showHomeLogged);
 
-router.get("/admin", pagesController.showAdmin);
+router.get("/admin", isAuthenticated, pagesController.showAdmin);
 
-router.get("/admin/new", pagesController.showNewArticle);
+router.get("/admin/new", isAuthenticated, pagesController.showNewArticle);
 
-router.post("/admin/new", articleController.create);
+router.post("/admin/new", isAuthenticated, articleController.create);
 
-router.get("/edit/:articleId", pagesController.showEditArticle);
+router.get("/edit/:articleId", isAuthenticated, pagesController.showEditArticle);
 
-router.post("/edit/:articleId", articleController.edit);
+router.post("/edit/:articleId", isAuthenticated, articleController.edit);
 
-router.get("/delete/:articleId", articleController.destroy);
+router.get("/delete/:articleId", isAuthenticated, articleController.destroy);
 
 module.exports = router;

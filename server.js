@@ -32,8 +32,6 @@ passport.use(
       passwordField: "password",
     },
     async (username, password, cb) => {
-      console.log(username);
-      console.log(password);
       try {
         const user = await User.findOne({ where: { email: username } });
         if (!user) {
