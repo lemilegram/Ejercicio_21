@@ -11,7 +11,9 @@ router.get("/register", authController.index);
 
 router.post("/register", authController.store);
 
-router.get("/login", authController.login);
+router.get("/login", authController.loginIndex);
+
+router.post("/login", authController.loginAuth);
 
 router.get("/home", pagesController.showHome);
 

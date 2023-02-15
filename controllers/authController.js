@@ -1,13 +1,20 @@
 const { User } = require("../models");
+const bcrypt = require("bcrypt");
+const passport = require("passport");
 
 // Display a listing of the resource.
 async function index(req, res) {
   res.render("register");
 }
 
-async function login(req, res) {
+async function loginIndex(req, res) {
   res.render("login");
 }
+
+const loginAuth = passport.authenticate("local", {
+  successRedirect: "/home",
+  failureRedirect: "/login",
+});
 
 // Display the specified resource.
 async function show(req, res) {}
@@ -26,7 +33,7 @@ async function store(req, res) {
     firstname: registerFirstname,
     lastname: registerLastname,
     email: registerEmail,
-    password: registerPassword,
+    password: await bcrypt.hash(`${registerPassword}`, 8),
   });
 
   return res.redirect("/home");
@@ -46,7 +53,8 @@ async function destroy(req, res) {}
 
 module.exports = {
   index,
-  login,
+  loginIndex,
+  loginAuth,
   show,
   create,
   store,
