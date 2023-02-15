@@ -1,20 +1,20 @@
 const { Article } = require("../models");
 const { User } = require("../models");
 const { Comment } = require("../models");
+const isAuthenticated = require("../middlewares/isAuthenticated");
 
 // Display a listing of the resource.
 async function index(req, res) {}
 
 // Display the specified resource.
 async function show(req, res) {
-  // const articles = await Article.findAll({ include: User });
   const article = await Article.findByPk(req.params.articleId, { include: User });
   const comments = await Comment.findAll(
     { where: { articleId: req.params.articleId } },
     { include: User },
   );
   const users = await User.findAll();
-  res.render("article", { article, comments, users });
+  res.render("article", { article, comments, users, isAuthenticated: req.isAuthenticated() });
 }
 
 // Show the form for creating a new resource

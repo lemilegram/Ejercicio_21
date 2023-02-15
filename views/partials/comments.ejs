@@ -1,0 +1,14 @@
+<form action="/article/<%= article.id %>" method="post">
+  <h3>Add your comment</h3>
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Name" name="name" />
+  </div>
+
+  <div class="form-floating">
+    <textarea class="form-control" name="comment"></textarea>
+  </div>
+
+  <div class="d-grid gap-2 col-auto">
+    <button class="btn btn-primary mb-3 mt-3" type="submit">Send</button>
+  </div>
+</form>

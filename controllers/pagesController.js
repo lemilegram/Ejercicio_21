@@ -10,11 +10,6 @@ async function showHome(req, res) {
   });
 }
 
-async function showHomeLogged(req, res) {
-  const articles = await Article.findAll({ include: User });
-  res.render("homeLogged");
-}
-
 async function showAdmin(req, res) {
   const articles = await Article.findAll({ include: User });
   res.render("admin", { articles });
@@ -39,7 +34,7 @@ async function showAboutUs(req, res) {
 
 module.exports = {
   showHome,
-  showHomeLogged,
+
   showAdmin,
   showNewArticle,
   showEditArticle,
