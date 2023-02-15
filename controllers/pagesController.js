@@ -12,7 +12,6 @@ async function showHome(req, res) {
 
 async function showAdmin(req, res) {
   const author = req.user;
-  console.log(author.id);
   const articles = await Article.findAll({
     include: {
       model: User,
@@ -21,7 +20,7 @@ async function showAdmin(req, res) {
       },
     },
   });
-  res.render("admin", { articles, author });
+  res.render("admin", { articles });
 }
 
 async function showNewArticle(req, res) {
