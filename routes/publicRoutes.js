@@ -4,7 +4,6 @@ const pagesController = require("../controllers/pagesController");
 const articleController = require("../controllers/articleController");
 const commentController = require("../controllers/commentController");
 const authController = require("../controllers/authController");
-const isAuthenticated = require("../middlewares/isAuthenticated");
 
 router.get("/register", authController.index);
 

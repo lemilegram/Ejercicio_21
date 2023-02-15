@@ -16,6 +16,13 @@ const loginAuth = passport.authenticate("local", {
   failureRedirect: "/login",
 });
 
+async function logout(req, res) {
+  req.logout((err) => {
+    if (err) throw err;
+    return res.redirect("/login");
+  });
+}
+
 // Display the specified resource.
 async function show(req, res) {}
 
@@ -26,16 +33,18 @@ async function create(req, res) {}
 async function store(req, res) {
   const [user, created] = await User.findOrCreate({
     where: {
+      email: req.body.email,
+    },
+    defaults: {
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      email: req.body.email,
       password: req.body.password,
     },
   });
   if (created) {
-    req.login(user, () => res.redirect("/admin"));
+    req.login(user, () => res.redirect("/panel/admin"));
   } else {
-    res.redirect("back");
+    res.redirect("/login");
   }
 }
 
@@ -67,6 +76,7 @@ module.exports = {
   index,
   loginIndex,
   loginAuth,
+  logout,
   show,
   create,
   store,

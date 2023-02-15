@@ -11,8 +11,17 @@ async function showHome(req, res) {
 }
 
 async function showAdmin(req, res) {
-  const articles = await Article.findAll({ include: User });
-  res.render("admin", { articles });
+  const author = req.user;
+  console.log(author.id);
+  const articles = await Article.findAll({
+    include: {
+      model: User,
+      where: {
+        id: req.user.id,
+      },
+    },
+  });
+  res.render("admin", { articles, author });
 }
 
 async function showNewArticle(req, res) {
