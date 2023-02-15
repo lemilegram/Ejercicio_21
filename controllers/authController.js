@@ -1,4 +1,5 @@
 const { User } = require("../models");
+const bcrypt = require("bcrypt");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -26,7 +27,7 @@ async function store(req, res) {
     firstname: registerFirstname,
     lastname: registerLastname,
     email: registerEmail,
-    password: registerPassword,
+    password: await bcrypt.hash(`${registerPassword}`, 8),
   });
 
   return res.redirect("/home");
