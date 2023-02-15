@@ -8,7 +8,7 @@
     <%- include ('partials/bootstrap') %>
   </head>
   <body class="vh-100">
-    <div class="my-5 d-flex flex-column justify-content-center align-items-center ">
+    <div class="my-5 d-flex flex-column justify-content-center align-items-center">
       <div
         class="container w-50 d-flex flex-column align-items-center justify-content-center p-3 border border-dark"
       >
@@ -46,24 +46,25 @@
               placeholder="nombre@example.com"
               required
             />
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input
-                name="password"
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Insert password..."
-                required
-              />
           </div>
-          <div class="col-12 mt-3">
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Insert password..."
+              required
+            />
+          </div>
+          <div class="mt-4">
             <button class="btn btn-primary btn-success" type="submit">Sign in</button>
           </div>
         </form>
       </div>
     </div>
-    <div class="mt-4">
+    <div class="d-flex justify-content-center mt-4">
       <p>Are you already registered?<a href="/login" class="ms-2">Log in</a></p>
     </div>
     <%- include ("partials/footer") %>
