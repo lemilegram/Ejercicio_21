@@ -4,8 +4,6 @@ const pagesController = require("../controllers/pagesController");
 const articleController = require("../controllers/articleController");
 const isAuthenticated = require("../middlewares/isAuthenticated");
 
-router.get("/homeLogged", pagesController.showHomeLogged);
-
 router.get("/admin", isAuthenticated, pagesController.showAdmin);
 
 router.get("/admin/new", isAuthenticated, pagesController.showNewArticle);
