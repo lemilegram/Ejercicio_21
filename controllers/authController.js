@@ -1,6 +1,6 @@
 const { User } = require("../models");
-const bcrypt = require("bcrypt");
 const passport = require("passport");
+const bcrypt = require("bcrypt");
 
 // Display a listing of the resource.
 async function index(req, res) {
@@ -38,13 +38,14 @@ async function store(req, res) {
     defaults: {
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      password: req.body.password,
+      password: await bcrypt.hash(req.body.password, 8),
     },
   });
   if (created) {
     req.login(user, () => res.redirect("/panel/admin"));
   } else {
-    res.redirect("/login");
+    req.flash("error", "You are already registered!");
+    return res.redirect("/register");
   }
 }
 
