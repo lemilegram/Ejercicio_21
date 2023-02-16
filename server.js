@@ -5,10 +5,15 @@ const routes = require("./routes");
 const dbInitialSetup = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
+const passportConfig = require("./passport/passportConfig");
+const flash = require("express-flash");
+
+passportConfig(app);
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use(flash());
 
 routes(app);
 

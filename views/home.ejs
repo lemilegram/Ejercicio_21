@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <%- include("partials/navbar") %>
+    <% if(isAuthenticated) {%>
+      <%- include("partials/loggedNav") %>
+      <% } else {%>
+        <%- include("partials/navbar") %>
+      <% } %>
+  
     <section class="hero d-flex flex-column justify-content-center align-items-center">
       <h1>Hack the blog</h1>
       <h3>El Blog de Hack Academy</h3>
